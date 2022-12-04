@@ -32,10 +32,10 @@ public class DemoApplication {
 	public String createManagedIdentityCredential() {
 		ManagedIdentityCredential managedIdentityCredential = new ManagedIdentityCredentialBuilder().build();
 
-		BlobServiceClient blobServiceClient = new BlobServiceClientBuilder()
-				.endpoint("https://jplearn1.blob.core.windows.net/")
-				.credential(managedIdentityCredential)
-				.buildClient();
+		// BlobServiceClient blobServiceClient = new BlobServiceClientBuilder()
+		// 		.endpoint("https://jplearn1.blob.core.windows.net/")
+		// 		.credential(managedIdentityCredential)
+		// 		.buildClient();
 
 		System.out.println("\nListing blobs...");
 		// Get a reference to a blob
@@ -47,6 +47,7 @@ public class DemoApplication {
 		// 	System.out.println("\t" + blobItem.getName());
 		// 	stringBuffer.append(blobItem.getName());
 		// }
-		return stringBuffer.toString();
+		// return stringBuffer.toString();
+		return "cucu";
 	}
 }
