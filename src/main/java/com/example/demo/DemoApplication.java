@@ -41,6 +41,7 @@ public class DemoApplication {
 		// Get a reference to a blob
 		// Create the container and return a container client object
 		BlobContainerClient blobContainerClient = blobServiceClient.createBlobContainer("blob-container");
+		System.out.println("\nListing blobs1...");
 		// List the blob(s) in the container.
 		StringBuffer stringBuffer = new StringBuffer("test ");
 		// for (BlobItem blobItem : blobContainerClient.listBlobs()) {
@@ -48,6 +49,6 @@ public class DemoApplication {
 		// 	stringBuffer.append(blobItem.getName());
 		// }
 		// return stringBuffer.toString();
-		return "cucu";
+		return "cucu1";
 	}
 }
