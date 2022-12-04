@@ -42,11 +42,11 @@ public class DemoApplication {
 		// Create the container and return a container client object
 		BlobContainerClient blobContainerClient = blobServiceClient.createBlobContainer("blob-container");
 		// List the blob(s) in the container.
-		StringBuffer stringBuffer = new StringBuffer();
-		for (BlobItem blobItem : blobContainerClient.listBlobs()) {
-			System.out.println("\t" + blobItem.getName());
-			stringBuffer.append(blobItem.getName());
-		}
+		StringBuffer stringBuffer = new StringBuffer("test ");
+		// for (BlobItem blobItem : blobContainerClient.listBlobs()) {
+		// 	System.out.println("\t" + blobItem.getName());
+		// 	stringBuffer.append(blobItem.getName());
+		// }
 		return stringBuffer.toString();
 	}
 }
