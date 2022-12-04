@@ -47,7 +47,7 @@ public class DemoApplication {
 		StringBuffer stringBuffer = new StringBuffer("test ");
 		for (BlobItem blobItem : blobContainerClient.listBlobs()) {
 			System.out.println("\t" + blobItem.getName());
-			stringBuffer.append(blobItem.getName());
+			stringBuffer.append(" " + blobItem.getName());
 		}
 		return stringBuffer.toString();
 	}
