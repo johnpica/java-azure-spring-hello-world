@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.azure.identity.ManagedIdentityCredential;
 import com.azure.identity.ManagedIdentityCredentialBuilder;
 import com.azure.storage.blob.BlobContainerClient;
-import com.azure.storage.blob.BlobContainerClientBuilder;
 import com.azure.storage.blob.BlobServiceClient;
 import com.azure.storage.blob.BlobServiceClientBuilder;
 import com.azure.storage.blob.models.BlobItem;
@@ -34,22 +33,16 @@ public class DemoApplication {
 		ManagedIdentityCredential managedIdentityCredential = new ManagedIdentityCredentialBuilder().build();
 
 		BlobServiceClient blobServiceClient = new BlobServiceClientBuilder()
-				.endpoint("https://jplearn1.blob.core.windows.net/blob-container")
-				.credential(managedIdentityCredential)
-				.buildClient();
-
-		System.out.println("\nListing1 blobs...");
-		// Get a reference to a blob
-		// Create the container and return a container client object
-		// BlobContainerClient blobContainerClient =
-		// blobServiceClient.createBlobContainer("blob-container");
-		//BlobContainerClient blobContainerClient = blobServiceClient.getBlobContainerClient("mycontainer");
-		BlobContainerClient blobContainerClient = new BlobContainerClientBuilder()
-				.endpoint("https://jplearn1.blob.core.windows.net/blob-container")
+				.endpoint("https://jplearn1.blob.core.windows.net/")
 				.credential(managedIdentityCredential)
 				.buildClient();
 
 		System.out.println("\nListing blobs1...");
+		// Get a reference to a blob
+		// Create the container and return a container client object
+		//BlobContainerClient blobContainerClient = blobServiceClient.createBlobContainer("blob-container");
+		BlobContainerClient blobContainerClient = blobServiceClient.getBlobContainerClient("blob-container");
+		System.out.println("\nListing blobs2...");
 		// List the blob(s) in the container.
 		StringBuffer stringBuffer = new StringBuffer("test ");
 		for (BlobItem blobItem : blobContainerClient.listBlobs()) {
