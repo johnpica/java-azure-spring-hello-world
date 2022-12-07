@@ -33,7 +33,7 @@ public class DemoApplication {
 		ManagedIdentityCredential managedIdentityCredential = new ManagedIdentityCredentialBuilder().build();
 
 		BlobServiceClient blobServiceClient = new BlobServiceClientBuilder()
-				.endpoint("https://jplearn1.blob.core.windows.net/")
+				.endpoint("https://jplearnfr.blob.core.windows.net/")
 				.credential(managedIdentityCredential)
 				.buildClient();
 
